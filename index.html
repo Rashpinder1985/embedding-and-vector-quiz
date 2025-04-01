@@ -4,9 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comprehension Passages with Objective Questions and Answer Keys</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+        }
+
+        .passage {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        ol {
+            padding-left: 20px;
+        }
+
+        button {
+            margin-top: 20px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .answers {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e7f7e7;
+            border: 1px solid #c6e6c6;
+            border-radius: 8px;
+        }
+    </style>
 </head>
 <body>
+
     <header>
         <h1>Comprehension Passages with Objective Questions and Answer Keys</h1>
     </header>
@@ -17,35 +67,50 @@
             Embeddings are low-dimensional numerical representations designed to capture the meaning and relationships between various types of data, such as text, images, and audio. They simplify complex data into compact vectors that preserve semantic information, making it easier to process and compare. For example, in an embedding space, the word "king" might be closer to "queen" than to "bicycle," reflecting their semantic similarity. These embeddings are widely used in applications like search engines and recommendation systems, where they help identify patterns and similarities in data.
         </p>
         <h3>Objective Questions</h3>
-        <ol>
-            <li>What are embeddings primarily designed to capture?
-                <ul>
-                    <li>a) Storage efficiency</li>
-                    <li>b) Semantic meaning and relationships</li>
-                    <li>c) Raw data</li>
-                    <li>d) Numerical IDs</li>
-                </ul>
-                <strong>Answer:</strong> b
-            </li>
-            <li>In an embedding space, which word is likely closer to "king"?
-                <ul>
-                    <li>a) Bicycle</li>
-                    <li>b) Queen</li>
-                    <li>c) Car</li>
-                    <li>d) Tree</li>
-                </ul>
-                <strong>Answer:</strong> b
-            </li>
-            <li>Which application commonly uses embeddings?
-                <ul>
-                    <li>a) Weather forecasting</li>
-                    <li>b) Search engines</li>
-                    <li>c) Farming equipment</li>
-                    <li>d) Space exploration</li>
-                </ul>
-                <strong>Answer:</strong> b
-            </li>
-        </ol>
+        <form id="form-1">
+            <ol>
+                <li>What are embeddings primarily designed to capture?
+                    <ul>
+                        <li><input type="radio" name="q1" value="a"> a) Storage efficiency</li>
+                        <li><input type="radio" name="q1" value="b"> b) Semantic meaning and relationships</li>
+                        <li><input type="radio" name="q1" value="c"> c) Raw data</li>
+                        <li><input type="radio" name="q1" value="d"> d) Numerical IDs</li>
+                    </ul>
+                </li>
+                <li>In an embedding space, which word is likely closer to "king"?
+                    <ul>
+                        <li><input type="radio" name="q2" value="a"> a) Bicycle</li>
+                        <li><input type="radio" name="q2" value="b"> b) Queen</li>
+                        <li><input type="radio" name="q2" value="c"> c) Car</li>
+                        <li><input type="radio" name="q2" value="d"> d) Tree</li>
+                    </ul>
+                </li>
+                <li>Which application commonly uses embeddings?
+                    <ul>
+                        <li><input type="radio" name="q3" value="a"> a) Weather forecasting</li>
+                        <li><input type="radio" name="q3" value="b"> b) Search engines</li>
+                        <li><input type="radio" name="q3" value="c"> c) Farming equipment</li>
+                        <li><input type="radio" name="q3" value="d"> d) Space exploration</li>
+                    </ul>
+                </li>
+            </ol>
+            <button type="button" onclick="checkAnswers(1)">Submit Answers</button>
+        </form>
+
+        <div class="answers" id="answers-1">
+            <h3>Answer Key:</h3>
+            <ol>
+                <li>What are embeddings primarily designed to capture? 
+                    <strong>b) Semantic meaning and relationships</strong>
+                </li>
+                <li>In an embedding space, which word is likely closer to "king"? 
+                    <strong>b) Queen</strong>
+                </li>
+                <li>Which application commonly uses embeddings? 
+                    <strong>b) Search engines</strong>
+                </li>
+            </ol>
+        </div>
     </section>
 
     <section class="passage" id="passage-2">
@@ -54,150 +119,224 @@
             Embeddings play a crucial role in retrieval systems like Google Search. By converting both user queries and web pages into embeddings, search engines can find semantically similar content efficiently. Similarly, recommendation systems use embeddings to suggest items that align with user preferences. Joint embeddings take this further by mapping different types of data, such as text and images, into the same space, enabling cross-modal comparisons.
         </p>
         <h3>Objective Questions</h3>
-        <ol>
-            <li>How do search engines use embeddings?
-                <ul>
-                    <li>a) To store raw data</li>
-                    <li>b) To find semantically similar content</li>
-                    <li>c) To display advertisements</li>
-                    <li>d) To reduce latency</li>
-                </ul>
-                <strong>Answer:</strong> b
-            </li>
-            <li>What is the purpose of joint embeddings?
-                <ul>
-                    <li>a) To separate different types of data</li>
-                    <li>b) To map different data types into the same space</li>
-                    <li>c) To increase storage requirements</li>
-                    <li>d) To improve tokenization</li>
-                </ul>
-                <strong>Answer:</strong> b
-            </li>
-            <li>Which system uses embeddings for personalized suggestions?
-                <ul>
-                    <li>a) Weather prediction systems</li>
-                    <li>b) Recommendation systems</li>
-                    <li>c) Traffic monitoring systems</li>
-                    <li>d) Financial auditing systems</li>
-                </ul>
-                <strong>Answer:</strong> b
-            </li>
-        </ol>
-    </section>
+        <form id="form-2">
+            <ol>
+                <li>How do search engines use embeddings?
+                    <ul>
+                        <li><input type="radio" name="q1" value="a"> a) To store raw data</li>
+                        <li><input type="radio" name="q1" value="b"> b) To find semantically similar content</li>
+                        <li><input type="radio" name="q1" value="c"> c) To display advertisements</li>
+                        <li><input type="radio" name="q1" value="d"> d) To reduce latency</li>
+                    </ul>
+                </li>
+                <li>What is the purpose of joint embeddings?
+                    <ul>
+                        <li><input type="radio" name="q2" value="a"> a) To separate different types of data</li>
+                        <li><input type="radio" name="q2" value="b"> b) To map different data types into the same space</li>
+                        <li><input type="radio" name="q2" value="c"> c) To increase storage requirements</li>
+                        <li><input type="radio" name="q2" value="d"> d) To improve tokenization</li>
+                    </ul>
+                </li>
+                <li>Which system uses embeddings for personalized suggestions?
+                    <ul>
+                        <li><input type="radio" name="q3" value="a"> a) Weather prediction systems</li>
+                        <li><input type="radio" name="q3" value="b"> b) Recommendation systems</li>
+                        <li><input type="radio" name="q3" value="c"> c) Traffic monitoring systems</li>
+                        <li><input type="radio" name="q3" value="d"> d) Financial auditing systems</li>
+                    </ul>
+                </li>
+            </ol>
+            <button type="button" onclick="checkAnswers(2)">Submit Answers</button>
+        </form>
 
-    <section class="passage" id="passage-3">
-        <h2>Passage 3: Evaluating Embedding Models</h2>
-        <p>
-            The effectiveness of embedding models is measured using metrics like precision and recall. Precision evaluates how many retrieved items are relevant, while recall measures the proportion of relevant items retrieved. Advanced metrics like Precision@K focus on the accuracy of the top K results, which is crucial for practical applications where users rarely look beyond the first few results.
-        </p>
-        <h3>Objective Questions</h3>
+        <div class="answers" id="answers-2">
+            <h3>Answer Key:</h3>
+            <ol>
+                <li>How do search engines use embeddings? 
+                    <strong>b) To find semantically similar content</strong>
+                </li>
+                <li>What is the purpose of joint embeddings? 
+                    <strong>b) To map different data types into the same space</strong>
+                </li>
+                <li>Which system uses embeddings for personalized suggestions? 
+                    <strong>b) Recommendation systems</strong>
+                </li>
+            </ol>
+        </div>
+    </section>
+<section class="passage" id="passage-3">
+    <h2>Passage 3: Evaluating Embedding Models</h2>
+    <p>
+        The effectiveness of embedding models is measured using metrics like precision and recall. Precision evaluates how many retrieved items are relevant, while recall measures the proportion of relevant items retrieved. Advanced metrics like Precision@K focus on the accuracy of the top K results, which is crucial for practical applications where users rarely look beyond the first few results.
+    </p>
+    <h3>Objective Questions</h3>
+    <form id="form-3">
         <ol>
             <li>What does precision measure in embedding evaluation?
                 <ul>
-                    <li>a) The speed of retrieval</li>
-                    <li>b) The relevance of retrieved items</li>
-                    <li>c) The storage efficiency</li>
-                    <li>d) The type of data processed</li>
+                    <li><input type="radio" name="q1" value="a"> a) The speed of retrieval</li>
+                    <li><input type="radio" name="q1" value="b"> b) The relevance of retrieved items</li>
+                    <li><input type="radio" name="q1" value="c"> c) The storage efficiency</li>
+                    <li><input type="radio" name="q1" value="d"> d) The type of data processed</li>
                 </ul>
-                <strong>Answer:</strong> b
             </li>
             <li>Why is Precision@K important?
                 <ul>
-                    <li>a) It measures storage efficiency.</li>
-                    <li>b) It focuses on the relevance of top results.</li>
-                    <li>c) It improves tokenization.</li>
-                    <li>d) It reduces latency in retrieval systems.</li>
+                    <li><input type="radio" name="q2" value="a"> a) It measures storage efficiency.</li>
+                    <li><input type="radio" name="q2" value="b"> b) It focuses on the relevance of top results.</li>
+                    <li><input type="radio" name="q2" value="c"> c) It improves tokenization.</li>
+                    <li><input type="radio" name="q2" value="d"> d) It reduces latency in retrieval systems.</li>
                 </ul>
-                <strong>Answer:</strong> b
             </li>
             <li>What do users typically focus on in search results?
                 <ul>
-                    <li>a) The last page of results</li>
-                    <li>b) The top few results</li>
-                    <li>c) Random pages</li>
-                    <li>d) Irrelevant items</li>
+                    <li><input type="radio" name="q3" value="a"> a) The last page of results</li>
+                    <li><input type="radio" name="q3" value="b"> b) The top few results</li>
+                    <li><input type="radio" name="q3" value="c"> c) Random pages</li>
+                    <li><input type="radio" name="q3" value="d"> d) Irrelevant items</li>
                 </ul>
-                <strong>Answer:</strong> b
             </li>
         </ol>
-    </section>
+        <button type="button" onclick="checkAnswers(3)">Submit Answers</button>
+    </form>
 
-    <section class="passage" id="passage-4">
-        <h2>Passage 4: Text Embeddings</h2>
-        <p>
-            Text embeddings represent words, sentences, or documents as dense numerical vectors that capture semantic relationships. Tokenization is the first step in generating text embeddings, breaking down text into smaller units called tokens. Early techniques like Word2Vec revolutionized this field by creating word embeddings that reflect semantic similarities between words.
-        </p>
-        <h3>Objective Questions</h3>
+    <div class="answers" id="answers-3">
+        <h3>Answer Key:</h3>
+        <ol>
+            <li>What does precision measure in embedding evaluation? 
+                <strong>b) The relevance of retrieved items</strong>
+            </li>
+            <li>Why is Precision@K important? 
+                <strong>b) It focuses on the relevance of top results</strong>
+            </li>
+            <li>What do users typically focus on in search results? 
+                <strong>b) The top few results</strong>
+            </li>
+        </ol>
+    </div>
+</section>
+<!-- Passage 4: Text Embeddings -->
+<section class="passage" id="passage-4">
+    <h2>Passage 4: Text Embeddings</h2>
+    <p>
+        Text embeddings represent words, sentences, or documents as dense numerical vectors that capture semantic relationships. Tokenization is the first step in generating text embeddings, breaking down text into smaller units called tokens. Early techniques like Word2Vec revolutionized this field by creating word embeddings that reflect semantic similarities between words.
+    </p>
+    <h3>Objective Questions</h3>
+    <form id="form-4">
         <ol>
             <li>What is tokenization in text processing?
                 <ul>
-                    <li>a) Assigning random numbers to words</li>
-                    <li>b) Breaking down text into smaller units called tokens</li>
-                    <li>c) Encoding images into vectors</li>
-                    <li>d) Storing raw text as binary data</li>
+                    <li><input type="radio" name="q1" value="a"> a) Assigning random numbers to words</li>
+                    <li><input type="radio" name="q1" value="b"> b) Breaking down text into smaller units called tokens</li>
+                    <li><input type="radio" name="q1" value="c"> c) Encoding images into vectors</li>
+                    <li><input type="radio" name="q1" value="d"> d) Storing raw text as binary data</li>
                 </ul>
-                <strong>Answer:</strong> b
             </li>
             <li>Which technique was an early breakthrough in word embeddings?
                 <ul>
-                    <li>a) GloVe</li>
-                    <li>b) Word2Vec</li>
-                    <li>c) Joint embeddings</li>
-                    <li>d) NDGC</li>
+                    <li><input type="radio" name="q2" value="a"> a) GloVe</li>
+                    <li><input type="radio" name="q2" value="b"> b) Word2Vec</li>
+                    <li><input type="radio" name="q2" value="c"> c) Joint embeddings</li>
+                    <li><input type="radio" name="q2" value="d"> d) NDGC</li>
                 </ul>
-                <strong>Answer:</strong> b
             </li>
             <li>What do text embeddings aim to capture?
                 <ul>
-                    <li>a) File size reduction</li>
-                    <li>b) Semantic relationships between words</li>
-                    <li>c) Image resolution</li>
-                    <li>d) Audio frequencies</li>
+                    <li><input type="radio" name="q3" value="a"> a) File size reduction</li>
+                    <li><input type="radio" name="q3" value="b"> b) Semantic relationships between words</li>
+                    <li><input type="radio" name="q3" value="c"> c) Image resolution</li>
+                    <li><input type="radio" name="q3" value="d"> d) Audio frequencies</li>
                 </ul>
-                <strong>Answer:</strong> b
             </li>
         </ol>
-    </section>
+        <button type="button" onclick="checkAnswers(4)">Submit Answers</button>
+    </form>
 
-    <section class="passage" id="passage-5">
-        <h2>Passage 5: Challenges in Training Embedding Models</h2>
-        <p>
-            Training embedding models often requires labeled data, which can be expensive and time-consuming to gather. Recent advancements include using large language models to generate synthetic training data, such as question-document pairs. This approach has significantly improved performance metrics for embedding models while reducing reliance on manually labeled datasets.
-        </p>
-        <h3>Objective Questions</h3>
+    <div class="answers" id="answers-4">
+        <h3>Answer Key:</h3>
+        <ol>
+            <li>What is tokenization in text processing? 
+                <strong>b) Breaking down text into smaller units called tokens</strong>
+            </li>
+            <li>Which technique was an early breakthrough in word embeddings? 
+                <strong>b) Word2Vec</strong>
+            </li>
+            <li>What do text embeddings aim to capture? 
+                <strong>b) Semantic relationships between words</strong>
+            </li>
+        </ol>
+    </div>
+</section>
+
+<!-- Passage 5: Challenges in Training Embedding Models -->
+<section class="passage" id="passage-5">
+    <h2>Passage 5: Challenges in Training Embedding Models</h2>
+    <p>
+        Training embedding models often requires labeled data, which can be expensive and time-consuming to gather. Recent advancements include using large language models to generate synthetic training data, such as question-document pairs. This approach has significantly improved performance metrics for embedding models while reducing reliance on manually labeled datasets.
+    </p>
+    <h3>Objective Questions</h3>
+    <form id="form-5">
         <ol>
             <li>What is a major challenge in training embedding models?
                 <ul>
-                    <li>a) Lack of computational power</li>
-                    <li>b) Need for labeled data</li>
-                    <li>c) High storage requirements</li>
-                    <li>d) Difficulty in tokenization</li>
+                    <li><input type="radio" name="q1" value="a"> a) Lack of computational power</li>
+                    <li><input type="radio" name="q1" value="b"> b) Need for labeled data</li>
+                    <li><input type="radio" name="q1" value="c"> c) High storage requirements</li>
+                    <li><input type="radio" name="q1" value="d"> d) Difficulty in tokenization</li>
                 </ul>
-                <strong>Answer:</strong> b
             </li>
             <li>How can synthetic training data be generated for embedding models?
                 <ul>
-                    <li>a) By using large language models</li>
-                    <li>b) By manual labeling only</li>
-                    <li>c) By increasing dimensionality</li>
-                    <li>d) By reducing vector size</li>
+                    <li><input type="radio" name="q2" value="a"> a) By using large language models</li>
+                    <li><input type="radio" name="q2" value="b"> b) By manual labeling only</li>
+                    <li><input type="radio" name="q2" value="c"> c) By increasing dimensionality</li>
+                    <li><input type="radio" name="q2" value="d"> d) By reducing vector size</li>
                 </ul>
-                <strong>Answer:</strong> a
             </li>
             <li>What has been the impact of synthetic training data on embedding models?
                 <ul>
-                    <li>a) Reduced performance metrics</li>
-                    <li>b) Increased reliance on manual labeling</li>
-                    <li>c) Improved performance metrics</li>
-                    <li>d) Decreased scalability</li>
+                    <li><input type="radio" name="q3" value="a"> a) Reduced performance metrics</li>
+                    <li><input type="radio" name="q3" value="b"> b) Increased reliance on manual labeling</li>
+                    <li><input type="radio" name="q3" value="c"> c) Improved performance metrics</li>
+                    <li><input type="radio" name="q3" value="d"> d) Decreased scalability</li>
                 </ul>
-                <strong>Answer:</strong> c
             </li>
         </ol>
-    </section>
+        <button type="button" onclick="checkAnswers(5)">Submit Answers</button>
+    </form>
+
+    <div class="answers" id="answers-5">
+        <h3>Answer Key:</h3>
+        <ol>
+            <li>What is a major challenge in training embedding models? 
+                <strong>b) Need for labeled data</strong>
+            </li>
+            <li>How can synthetic training data be generated for embedding models? 
+                <strong>a) By using large language models</strong>
+            </li>
+            <li>What has been the impact of synthetic training data on embedding models? 
+                <strong>c) Improved performance metrics</strong>
+            </li>
+        </ol>
+    </div>
+</section>
 
     <footer>
-        <p>&copy; 2025 Embedding Education Resources</p>
+        <p>&copy; 2025 AI quizzes Rashpinder</p>
     </footer>
+
+    <script>
+        function checkAnswers(passNumber) {
+            const form = document.getElementById('form-' + passNumber);
+            const answersDiv = document.getElementById('answers-' + passNumber);
+            answersDiv.style.display = 'block';
+            form.querySelectorAll('input[type="radio"]').forEach((input) => {
+                input.disabled = true;
+            });
+        }
+    </script>
+
 </body>
 </html>
+
+      
